@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Further look into song attributes data</title>
+  <title>Further look into raw data</title>
   <!-- Boostrap Stylesheet -->
    <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="screen"> 
   <link href="css/bootstrap-3.4.1.css" rel="stylesheet" type="text/css">
@@ -41,12 +41,12 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right navbar-right-custom">
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Models <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                 <li><a href="definitions.html">Definitions</a></li>
-                  <li><a href="machine-learning.html">Machine Learning</a></li>
-                  <li><a href="visualizations/cloudiness.html">Cloudiness</a></li>
-                  <li><a href="visualizations/wind.html">Wind Speed</a></li>
+                 <li><a href="/regression.html">Regression</a></li>
+                  <li><a href="/multiple-linear-regression.html">Multiple Linear Regression</a></li>
+                  <li><a href="/random-forest.html">Random Forests</a></li>
+                  <li><a href="/svm.html">SVM</a></li>
                 </ul>
               </li>
               <li><a href="definitions.html">Definitions</a></li>
@@ -66,8 +66,194 @@
           <hr class="description-hr"/>
           <p class="description-text">A snippet of the raw data used in some of the models.</p>
 			<br>
-			
-        </div>
+			<table border="1" class="dataframe" style="table-width:900px">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>id</th>
+      <th>danceability</th>
+      <th>energy</th>
+      <th>key</th>
+      <th>loudness</th>
+      <th>mode</th>
+      <th>speechiness</th>
+      <th>acousticness</th>
+      <th>instrumentalness</th>
+      <th>liveness</th>
+      <th>valence</th>
+      <th>tempo</th>
+      <th>duration_ms</th>
+      <th>time_signature</th>
+      <th>popularity</th>
+      <th>bin_popularity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>7lmeHLHBe4nmXzuXc0HDjk</td>
+      <td>0.4700</td>
+      <td>0.978000</td>
+      <td>7.0</td>
+      <td>-5.399</td>
+      <td>1.0</td>
+      <td>0.0727</td>
+      <td>0.026100</td>
+      <td>0.000011</td>
+      <td>0.35600</td>
+      <td>0.50300</td>
+      <td>117.906</td>
+      <td>210133.0</td>
+      <td>4.0</td>
+      <td>65.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1wsRitfRRtWyEapl0q22o8</td>
+      <td>0.5990</td>
+      <td>0.957000</td>
+      <td>11.0</td>
+      <td>-5.764</td>
+      <td>1.0</td>
+      <td>0.1880</td>
+      <td>0.012900</td>
+      <td>0.000071</td>
+      <td>0.15500</td>
+      <td>0.48900</td>
+      <td>103.680</td>
+      <td>206200.0</td>
+      <td>4.0</td>
+      <td>69.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>1hR0fIFK2qRG3f3RF70pb7</td>
+      <td>0.3150</td>
+      <td>0.970000</td>
+      <td>7.0</td>
+      <td>-5.424</td>
+      <td>1.0</td>
+      <td>0.4830</td>
+      <td>0.023400</td>
+      <td>0.000002</td>
+      <td>0.12200</td>
+      <td>0.37000</td>
+      <td>149.749</td>
+      <td>298893.0</td>
+      <td>4.0</td>
+      <td>55.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>2lbASgTSoDO7MTuLAXlTW0</td>
+      <td>0.4400</td>
+      <td>0.967000</td>
+      <td>11.0</td>
+      <td>-5.830</td>
+      <td>0.0</td>
+      <td>0.2370</td>
+      <td>0.163000</td>
+      <td>0.000004</td>
+      <td>0.12100</td>
+      <td>0.57400</td>
+      <td>96.752</td>
+      <td>213640.0</td>
+      <td>4.0</td>
+      <td>50.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>1MQTmpYOZ6fcMQc56Hdo7T</td>
+      <td>0.4260</td>
+      <td>0.929000</td>
+      <td>2.0</td>
+      <td>-6.729</td>
+      <td>1.0</td>
+      <td>0.0701</td>
+      <td>0.001620</td>
+      <td>0.105000</td>
+      <td>0.07890</td>
+      <td>0.53900</td>
+      <td>127.059</td>
+      <td>205600.0</td>
+      <td>4.0</td>
+      <td>66.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>2LXPNLSMAauNJfnC58lSqY</td>
+      <td>0.2980</td>
+      <td>0.848000</td>
+      <td>2.0</td>
+      <td>-5.947</td>
+      <td>1.0</td>
+      <td>0.0727</td>
+      <td>0.053800</td>
+      <td>0.001520</td>
+      <td>0.20100</td>
+      <td>0.19400</td>
+      <td>148.282</td>
+      <td>280960.0</td>
+      <td>4.0</td>
+      <td>53.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>3moeHk8eIajvUEzVocXukf</td>
+      <td>0.4170</td>
+      <td>0.976000</td>
+      <td>9.0</td>
+      <td>-6.032</td>
+      <td>1.0</td>
+      <td>0.1750</td>
+      <td>0.000427</td>
+      <td>0.000134</td>
+      <td>0.10700</td>
+      <td>0.48300</td>
+      <td>90.395</td>
+      <td>202040.0</td>
+      <td>4.0</td>
+      <td>43.0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7</td>
+      <td>4llunZfVXv3NvUzXVB3VVL</td>
+      <td>0.2770</td>
+      <td>0.873000</td>
+      <td>11.0</td>
+      <td>-6.571</td>
+      <td>0.0</td>
+      <td>0.0883</td>
+      <td>0.006940</td>
+      <td>0.000054</td>
+      <td>0.18800</td>
+      <td>0.61800</td>
+      <td>172.848</td>
+      <td>228093.0</td>
+      <td>4.0</td>
+      <td>46.0</td>
+      <td>1</td>
+    </tr>
+				</tbody>	
+        
+			</table>
+		  </div>
 </article>
     </div>
     

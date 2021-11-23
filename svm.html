@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Further look into song attributes data</title>
+  <!-- Boostrap Stylesheet -->
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="screen"> 
+  <link href="css/bootstrap-3.4.1.css" rel="stylesheet" type="text/css">
+  <!-- Our own CSS stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css" media="screen">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--  [if lt IE 9]>-->
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]
+</head>
+
+  <body>
+<!-- Start of navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid navbar-custom">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="col-xs-9 phone-nav">
+              <a class="navbar-brand" href="index.html" id="logo">Track Analysis</a>
+            </div>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right navbar-right-custom">
+               <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Models <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                 <li><a href="/regression.html">Regression</a></li>
+                  <li><a href="/multiple-linear-regression.html">Multiple Linear Regression</a></li>
+                  <li><a href="/random-forest.html">Random Forests</a></li>
+                  <li><a href="/svm.html">SVM</a></li>
+                </ul>
+              </li>
+              <li><a href="definitions.html">Definitions</a></li>
+              <li><a href="data.html">Data</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!-- End of navbar -->
+
+    <!-- Start of container -->
+  <div class="container">
+      <article class="description-content row">
+        <div class="col-xs-12">
+          <h1 class="description-header">Support Vector Machine</h1>
+          <hr class="description-hr"/>
+          <p class="description-text">The final cetegorical model I tried was an SVM model.</p>
+	    </div>
+</article>
+      <article class="description-content row">
+        <div class="col-xs-12">
+		  <h2>Creating Model</h2>
+		  <p><a href='https://github.com/chrisp26/Final-project-song-analysis/blob/main/Code/Models/7_SVM_model.ipynb' target="_blank">Github Python Notebook: SVM model</a></p>
+			<br>
+	      <p> These are the features for my models: </p>
+		    <ul>
+		      <li>Full data set: n=74,079</li>
+		      <li>X =['danceability', 'energy', 'loudness', 'speechiness','acousticness','instrumentalness','liveness','valence','tempo']</li>
+		      <li>y ='popularity' (might be popular, unpopular)</li>
+		      <li>30% test size&nbsp;</li>
+          </ul>
+<img src="assets/images/svm-model.JPG" width="599" alt="SVM model" />
+		<br>
+		  <br>
+		  <p>
+			This model proves to be somewhat accurate at predicting whether a song will be popular, but not to a useful degree. Its usefulness at predicting whether a song is unpopular is not useful either</p>
+
+<br>
+		  <br>
+		  </div>
+</article>
+    </div>
+
+    <!-- End of container  -->
+
+    <!-- Start of footer -->    <!-- End of footer -->
+
+    <!-- jQuery CDN -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- Bootstrap CDN -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+  <script src="js/bootstrap-3.4.1.js"></script>
+</body>
+
+</html>

@@ -43,10 +43,10 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Models <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                 <li><a href="Final-project-song-analysis/regression.html">Regression</a></li>
-                  <li><a href="Final-project-song-analysis/multiple-linear-regression.html">Multiple Linear Regression</a></li>
-                  <li><a href="Final-project-song-analysis/random-forest.html">Random Forests</a></li>
-                  <li><a href="visualizations/svm.html">SVM</a></li>
+                 <li><a href="/regression.html">Regression</a></li>
+                  <li><a href="/multiple-linear-regression.html">Multiple Linear Regression</a></li>
+                  <li><a href="/random-forest.html">Random Forests</a></li>
+                  <li><a href="/svm.html">SVM</a></li>
                 </ul>
               </li>
               <li><a href="definitions.html">Definitions</a></li>
@@ -64,9 +64,9 @@
         <div class="col-xs-12">
           <h1 class="description-header">Regression analysis using select attributes</h1>
           <hr class="description-hr"/>
-          <p class="description-text">As a start to looking at building a model it is worthwhile seeing if a simple regression model can be used taking in two data points. This will help towards confirming whether there are in fact relationships which can be modelled.</p>
+          <p class="description-text">As a start when looking at building a model it is worthwhile seeing if a simple regression model can be used taking in two data points. This will help towards confirming whether there are in fact relationships which can be modelled.</p>
 		  <p class="description-text">Loudness:energy appears to have the strongest positive correlation while accousticness:energy appears to have the strongest negative correlation. Other values mostly have weak correlations.</p>
-	    <img src="assets/images/correlation_table.JPG" width="1000" alt=""/>
+	    <img src="assets/images/correlation_table.JPG" width="1000" alt="correlation table"/>
 			<br>
 			<br>
 		  <p class="description-text">To select variables a Pandas was used to create a simple correlation table showing which song attributes have positive and negative correlations along with the strength of these.</p>
@@ -78,14 +78,14 @@
 		  <p><a href='https://github.com/chrisp26/Final-project-song-analysis/blob/main/Code/Models/1_regression.ipynb' target="_blank">Github Python Notebook: regression model</a></p>
 			<br>
 		  <p>
-			After running this model with different pairs of variables I struggled to get any meaningful scores. When training the model with 'danceability' (X) and 'popularity' (y) - variables I'd guess could be accurately modelled - the Sklearn Linear Regression model gave back a training and testing scores of .047 and .049 respectively.
+			After running this model with different pairs of variables I struggled to get any meaningful R scores. When training the model with 'danceability' (X) and 'popularity' (y) - variables I'd guess could be accurately modelled - the Sklearn Linear Regression model gave back a training and testing scores of .047 and .049 respectively.
 			</p>
 	    <img src="assets/images/regression_code.PNG" width="937" height="382" alt="regression code" /> 
 		  <br>
 		  <br>
 		  <p class="text-center">
-		    <button type="button" class="btn btn-lg btn-default"><a href="/Final-project-song-analysis/correlations-popularity.html">Back</a></button>
-            <button type="button" class="btn btn-lg btn-default"><a href="/Final-project-song-analysis/multiple-linear-regression.html">Regression 2</a></button>
+		    <button type="button" class="btn btn-lg btn-default"><a href="/correlations-popularity.html">Back</a></button>
+            <button type="button" class="btn btn-lg btn-default"><a href="/multiple-linear-regression.html">Regression 2</a></button>
           </p>
 		  </div>
       </article>
