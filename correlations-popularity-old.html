@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Further look into song attributes data</title>
+  <!-- Boostrap Stylesheet -->
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="screen"> 
+  <link href="css/bootstrap-3.4.1.css" rel="stylesheet" type="text/css">
+  <!-- Our own CSS stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css" media="screen">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--  [if lt IE 9]>-->
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]
+</head>
+
+  <body>
+<!-- Start of navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid navbar-custom">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="col-xs-9 phone-nav">
+              <a class="navbar-brand" href="index.html" id="logo">Track Analysis</a>
+            </div>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right navbar-right-custom">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Models <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                 <li><a href="regression.html">Regression</a></li>
+                  <li><a href="multiple-linear-regression.html">Multiple Linear Regression</a></li>
+                  <li><a href="random-forest.html">Random Forests</a></li>
+                  <li><a href="svm.html">SVM</a></li>
+                </ul>
+              </li>
+              <li><a href="definitions.html">Definitions</a></li>
+              <li><a href="data.html">Data</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!-- End of navbar -->
+
+    <!-- Start of container -->
+    <div class="container">
+      <article class="description-content row">
+        <div class="col-xs-12">
+          <h1 class="description-header">Popularity vs. individual attributes</h1>
+          <hr class="description-hr"/>
+          <p class="description-text">When looking at individual attributes against the popularity of songs, there does appear to be some trends. Danceability and Energy seems to be higher in more popular songs while Accousticness appears to be at the lower end in more popular songs.</p>
+        </div>
+        <div class="col-md-6">
+          <h2 class="comparison-header">Accousticness</h2>
+          <img src="assets/images/individual-attributes-popularity/Accousticness.png" alt="" class="img-responsive">
+<hr class="visible-xs visible-sm">
+        </div>
+        <div class="col-md-6">
+          <h2 class="comparison-header">Danceability</h2>
+          <img src="assets/images/individual-attributes-popularity/Danceability.png" alt="" class="comparison-image img-responsive">
+<hr class="visible-xs visible-sm">
+        </div>
+        <div class="col-md-6">
+          <h2 class="comparison-header">Energy</h2>
+          <img src="assets/images/individual-attributes-popularity/Energy.png" class="comparison-image img-responsive">
+<hr class="visible-xs visible-sm">
+        </div>
+        <div class="col-md-6">
+          <h2 class="comparison-header">Instrumentalness</h2>
+        <img src="assets/images/individual-attributes-popularity/Instrumentalness.png" class="comparison-image img-responsive"> </div>
+        <div class="col-md-6">
+          <h2 class="comparison-header">Length (s)</h2>
+          <img src="assets/images/individual-attributes-popularity/Length_seconds.png" class="comparison-image img-responsive"></div>
+        <div class="col-md-6">
+          <h2 class="comparison-header">Liveness</h2>
+          <img src="assets/images/individual-attributes-popularity/Liveness.png" class="comparison-image img-responsive"></div>
+        <div class="col-md-6">
+          <h2 class="comparison-header">Spechiness</h2>
+          <img src="assets/images/individual-attributes-popularity/Speechiness.png" alt="Speechiness" class="comparison-image img-responsive"></div>
+        <div class="col-md-6">
+          <h2 class="comparison-header">Tempo</h2>
+          <img src="assets/images/individual-attributes-popularity/Tempo.png" alt="Tempo" class="comparison-image img-responsive"></div>
+        <div class="col-md-6">
+          <h2 class="comparison-header">Valence</h2>
+          <img src="assets/images/individual-attributes-popularity/Valence.png" alt="Valence" class="comparison-image img-responsive"></div>
+      </article>
+    </div>
+    <div class="container">
+      <section class="row">
+        <div class="col-md-8 col-lg-12">
+          <article class="description-content">
+            <h2>Machine learning</h2>
+            <p>The first thing to look into is some simple regression analysis using Scikit Learn.</p>
+
+		  <p class="text-center">
+		    <button type="button" class="btn btn-lg btn-default"><a href="correlations.html">Back</a></button>
+            <button type="button" class="btn btn-lg btn-default"><a href="regression.html">Regression</a></button>
+          </p>
+        </div>
+      </section>
+    </div>
+    <!-- End of container  -->
+
+    <!-- Start of footer -->
+    <footer class="footer navbar-fixed-bottom">
+      <div class="two-toned-footer-color"></div>
+      <p class="text-muted text-muted-footer text-center">
+        &copy; Chris Penn's final project UWA Data Visualisation 2021
+      </p>
+    </footer>
+    <!-- End of footer -->
+
+    <!-- jQuery CDN -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- Bootstrap CDN -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+  <script src="js/bootstrap-3.4.1.js"></script>
+</body>
+
+</html>
