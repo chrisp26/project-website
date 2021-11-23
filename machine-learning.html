@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Further look into song attributes data</title>
+  <!-- Boostrap Stylesheet -->
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="screen"> 
+  <link href="css/bootstrap-3.4.1.css" rel="stylesheet" type="text/css">
+  <!-- Our own CSS stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css" media="screen">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--  [if lt IE 9]>-->
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]
+</head>
+
+  <body>
+<!-- Start of navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid navbar-custom">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="col-xs-9 phone-nav">
+              <a class="navbar-brand" href="index.html" id="logo">Track Analysis</a>
+            </div>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right navbar-right-custom">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                 <li><a href="definitions.html">Definitions</a></li>
+                  <li><a href="machine-learning.html">Machine Learning</a></li>
+                  <li><a href="visualizations/cloudiness.html">Cloudiness</a></li>
+                  <li><a href="visualizations/wind.html">Wind Speed</a></li>
+                </ul>
+              </li>
+              <li><a href="definitions.html">Definitions</a></li>
+              <li><a href="data.html">Data</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!-- End of navbar -->
+
+    <!-- Start of container -->
+    <div class="container">
+      <article class="description-content row">
+        <div class="col-xs-12">
+          <h1 class="description-header">Machine learning</h1>
+			<h3>Regression analysis</h3>
+          <hr class="description-hr"/>
+          <p class="description-text">The goal is to generate a model which can be used to predict the popularity of a song. For this I have used scikit-learn to run the following regression models:</p>
+          <ol>
+            <li>Linear Regression</li>
+            <li>Ridge Regression</li>
+            <li>Lassoo Regression</li>
+            <li>Elastic Net Regression</li>
+          </ol>
+        </div>
+        <div class="col-md-6">
+          <h2 class="comparison-header">Linear Regression Model</h2>
+          <img src="../Images/linear-regression-model.PNG" alt="Danceability v energy" class="img-responsive">
+<hr class="visible-xs visible-sm">
+        </div>
+        <div class="col-md-6">
+          <h2 class="comparison-header">Ridge Model</h2>
+          <a href="visualizations/humidity.html"><img src="../Images/ridge-model.PNG" alt="Latitude vs. Humidity" class="comparison-image img-responsive"></a>
+          <hr class="visible-xs visible-sm">
+        </div>
+        <div class="col-md-6">
+          <h2 class="comparison-header">Lasso Model</h2>
+          <a href="visualizations/cloudiness.html"><img src="../Images/lassoo-model.PNG" alt="Latitude vs. Cloudiness" class="comparison-image img-responsive"></a>
+          <hr class="visible-xs visible-sm">
+        </div>
+        <div class="col-md-6">
+          <h2 class="comparison-header">Elasticnet Model</h2>
+          <a href="visualizations/wind.html"><img src="../Images/elastic-net-model.PNG" alt="Latitude vs. Wind Speed" class="comparison-image img-responsive"></a>
+        </div>
+      </article>
+    </div>
+    <div class="container">
+      <section class="row">
+        <div class="col-md-8 col-lg-12">
+          <article class="description-content">
+            <h2>Evaluation</h2>
+            <p>All regression models returned very low R-square scores. Even when removing variables and running with different combinations it became clear quickly that my original hypothesis was going to fail.</p>
+			  <p>
+			  Initially when creating these models the were done with the sample of ~3,000 popularity measures. I spent time retrieving more data via the Spotify API to increase this sample to ~75,000. This only resulted in the lower R-square scores shown here.
+			  </p>
+            <img src="assets/images/correlation_table.JPG" alt="Correlation table" width="1100"/></article>
+		  <p class="text-center">
+		    <button type="button" class="btn btn-lg btn-default"><a href="#index">Back</a></button>
+            <button type="button" class="btn btn-lg btn-default"><a href="">Next</a></button>
+          </a></p>
+        </div>
+      </section>
+    </div>
+    <!-- End of container  -->
+
+    <!-- Start of footer -->
+    <footer class="footer navbar-fixed-bottom">
+      <div class="two-toned-footer-color"></div>
+      <p class="text-muted text-muted-footer text-center">
+        &copy; Chris Penn's final project UWA Data Visualisation 2021
+      </p>
+    </footer>
+    <!-- End of footer -->
+
+    <!-- jQuery CDN -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- Bootstrap CDN -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+  <script src="js/bootstrap-3.4.1.js"></script>
+</body>
+
+</html>

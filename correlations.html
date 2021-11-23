@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Further look into song attributes data</title>
+  <!-- Boostrap Stylesheet -->
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="screen"> 
+  <link href="css/bootstrap-3.4.1.css" rel="stylesheet" type="text/css">
+  <!-- Our own CSS stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css" media="screen">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--  [if lt IE 9]>-->
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]
+</head>
+
+  <body>
+<!-- Start of navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid navbar-custom">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="col-xs-9 phone-nav">
+              <a class="navbar-brand" href="index.html" id="logo">Track Analysis</a>
+            </div>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right navbar-right-custom">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Models <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                 <li><a href="Final-project-song-analysis/regression.html">Regression</a></li>
+                  <li><a href="Final-project-song-analysis/multiple-linear-regression.html">Multiple Linear Regression</a></li>
+                  <li><a href="Final-project-song-analysis/random-forest.html">Random Forests</a></li>
+                  <li><a href="visualizations/svm.html">SVM</a></li>
+                </ul>
+              </li>
+              <li><a href="definitions.html">Definitions</a></li>
+              <li><a href="data.html">Data</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!-- End of navbar -->
+
+    <!-- Start of container -->
+    <div class="container">
+      <article class="description-content row">
+        <div class="col-xs-12">
+          <h1 class="description-header">Further look into song attributes data&nbsp;</h1>
+          <hr class="description-hr"/>
+          <p class="description-text">Before runnig any machine learning over the datasets, it is useful to take a look and see if there are any obvious correlations.  MatplotLib was used to create some quick scatter plots&nbsp; comparing some song attributes which may have relationships.&nbsp; &nbsp; &nbsp; &nbsp;</p>
+        </div>
+        <div class="col-md-6">
+          <h2 class="comparison-header">Energy vs. Danceability</h2>
+          <img src="assets/images/energy_v_danceability.png" alt="Danceability v energy" class="img-responsive">
+<hr class="visible-xs visible-sm">
+        </div>
+        <div class="col-md-6">
+          <h2 class="comparison-header">Energy vs. Accousticness</h2>
+          <img src="assets/images/accousticness_v_liveness.png" alt="Accousticness" class="comparison-image img-responsive">
+<hr class="visible-xs visible-sm">
+        </div>
+        <div class="col-md-6">
+          <h2 class="comparison-header">Liveness vs. Accousticness</h2>
+          <img src="assets/images/accousticness_v_liveness.png" alt="Accousticness" class="comparison-image img-responsive">
+<hr class="visible-xs visible-sm">
+        </div>
+        <div class="col-md-6">
+          <h2 class="comparison-header">Energy vs. Loudness</h2>
+        <img src="assets/images/loudness_v_energy.png" class="comparison-image img-responsive"> </div>
+      </article>
+    </div>
+    <div class="container">
+      <section class="row">
+        <div class="col-md-8 col-lg-12">
+          <article class="description-content">
+            <h2>Heatmap Correlations</h2>
+            <p>Taking a bit of a further look into a correlations heatmap table shows us that there are positive and negative correlations between many of the track characteristics. The strongest positive correlation being energy vs loudness (r=.82). The strongest negative correlation being accousticness vs energy (r=-.80). Unsurprising.</p>
+			  <p>
+			  Will these help differences help my model once to predict popularity?
+			  </p>
+            <img src="assets/images/correlation_table.JPG" alt="Correlation table" width="1100"/></article>
+		  <p class="text-center">
+		    <button type="button" class="btn btn-lg btn-default"><a href="#index">Back</a></button>
+            <button type="button" class="btn btn-lg btn-default"><a href="machine-learning">Machine Learning</a></button>
+          </p>
+        </div>
+      </section>
+    </div>
+    <!-- End of container  -->
+
+    <!-- Start of footer -->
+    <footer class="footer navbar-fixed-bottom">
+      <div class="two-toned-footer-color"></div>
+      <p class="text-muted text-muted-footer text-center">
+        &copy; Chris Penn's final project UWA Data Visualisation 2021
+      </p>
+    </footer>
+    <!-- End of footer -->
+
+    <!-- jQuery CDN -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- Bootstrap CDN -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+  <script src="js/bootstrap-3.4.1.js"></script>
+</body>
+
+</html>

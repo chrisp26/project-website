@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Further look into song attributes data</title>
+  <!-- Boostrap Stylesheet -->
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="screen"> 
+  <link href="css/bootstrap-3.4.1.css" rel="stylesheet" type="text/css">
+  <!-- Our own CSS stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css" media="screen">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--  [if lt IE 9]>-->
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]
+</head>
+
+  <body>
+<!-- Start of navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid navbar-custom">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="col-xs-9 phone-nav">
+              <a class="navbar-brand" href="index.html" id="logo">Track Analysis</a>
+            </div>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right navbar-right-custom">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Models <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                 <li><a href="Final-project-song-analysis/regression.html">Regression</a></li>
+                  <li><a href="Final-project-song-analysis/multiple-linear-regression.html">Multiple Linear Regression</a></li>
+                  <li><a href="Final-project-song-analysis/random-forest.html">Random Forests</a></li>
+                  <li><a href="visualizations/svm.html">SVM</a></li>
+                </ul>
+              </li>
+              <li><a href="definitions.html">Definitions</a></li>
+              <li><a href="data.html">Data</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!-- End of navbar -->
+
+    <!-- Start of container -->
+  <div class="container">
+      <article class="description-content row">
+        <div class="col-xs-12">
+          <h1 class="description-header">Multiple Linear Regression</h1>
+          <hr class="description-hr"/>
+          <p class="description-text">The purpose of this project is to invetigate whether the attributes of a song can be used build a model to predict popularity. As this is numerical value, and I am using a number of independent variables, Linear regression should be the model which is used to make this prediction.</p>
+	    </div>
+</article>
+      <article class="description-content row">
+        <div class="col-xs-12">
+		  <h2>Attempt One</h2>
+		  <p><a href='https://github.com/chrisp26/Final-project-song-analysis/blob/main/Code/Models/2_regression_models_all_variables.ipynb' target="_blank">Github Python Notebook: multiple regression model</a></p>
+			<br>
+	      <p> These are the features for my models: </p>
+		    <ul>
+		      <li>Full data set: N = 2,633</li>
+		      <li>X =['danceability', 'energy', 'key', 'loudness', 'mode','speechiness','acousticness','instrumentalness','liveness','valence','tempo','time_signature','duration_ms']</li>
+		      <li>y ='popularity'</li>
+		      <li>30% test size&nbsp;</li>
+          </ul>
+<img src="Images/multiple-regression-MSE.PNG" width="946" alt="regression code" />
+		<br>
+		  <br>
+		  <p>
+			When calculating the MSE and R2 we don't get a great result: .998 and .155 respectively.
+			</p>
+		  <p> Below are the results when I run scikit learn using different linear regression models. Not the result I was looking for. The R2 seems so low that there is possible no way to model the popularity of a song based on these combination of attributes.&nbsp; &nbsp; &nbsp;&nbsp;</p>
+		  <p>&nbsp;</p>
+		  <img src="assets/images/multiple-regression-results-graph.png" width="754" height="453" alt=""/> <br>
+		  <br>
+		  </div>
+        <div class="col-xs-12">
+          <h2>Attempt Two</h2>
+          <p><a href='https://github.com/chrisp26/Final-project-song-analysis/blob/main/Code/Models/3_regression_models_select_variables.ipynb' target="_blank">Github Python Notebook: multiple regression model 2</a></p>
+          <br>
+          <p> At this stage my thinking is that there may still be a way to build a regression model to predict song popularity. I am going to try two things:</p>
+          <ol>
+            <li>Running with more data</li>
+            <li>Trying different combinations of the independent variables (song attributes)</li>
+          </ol>
+		  <p>
+			New parameters
+			</p>
+<ul>
+        <li>Full data set: N = 74,078 (does more data mean a more accurately trained model?)</li>
+            <li>X was populated with different combinations of song attributes. By removing some of the less variable attributes (see attributes analysis) my thinking was that my models' R2 may be able to be increased. Example: X = songs_df[['danceability', 'energy', 'loudness','valence']]</li>
+            <li>y ='popularity'</li>
+            <li>30% test size</li>
+          </ul>
+          <img src="assets/images/regression_code_2.PNG" width="1000" alt="regression code" /> <br>
+          <br>
+          <p> When calculating the MSE and R2 the results were even worse?! The highest R2 score achieved was using the Ridge model which gave back .0209. </p>
+          <p>&nbsp;</p>
+          <img src="assets/images/multiple-regression-results-graph-2.png" width="754" height="453" alt=""/> <br>
+          <br>
+          <p class="text-center">
+            <button type="button" class="btn btn-lg btn-default">
+            <a href="/Final-project-song-analysis/regression.html">Regression</a>
+            </button>
+            <button type="button" class="btn btn-lg btn-default">
+            <a href="/Final-project-song-analysis/random-forest.html">Random Forest</a>
+            </button>
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <!-- End of container  -->
+
+    <!-- Start of footer -->    <!-- End of footer -->
+
+    <!-- jQuery CDN -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- Bootstrap CDN -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+  <script src="js/bootstrap-3.4.1.js"></script>
+</body>
+
+</html>

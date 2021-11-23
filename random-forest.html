@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Further look into song attributes data</title>
+  <!-- Boostrap Stylesheet -->
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="screen"> 
+  <link href="css/bootstrap-3.4.1.css" rel="stylesheet" type="text/css">
+  <!-- Our own CSS stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css" media="screen">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--  [if lt IE 9]>-->
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]
+</head>
+
+  <body>
+<!-- Start of navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid navbar-custom">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="col-xs-9 phone-nav">
+              <a class="navbar-brand" href="index.html" id="logo">Track Analysis</a>
+            </div>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right navbar-right-custom">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Models <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                 <li><a href="Final-project-song-analysis/regression.html">Regression</a></li>
+                  <li><a href="Final-project-song-analysis/multiple-linear-regression.html">Multiple Linear Regression</a></li>
+                  <li><a href="Final-project-song-analysis/random-forest.html">Random Forests</a></li>
+                  <li><a href="visualizations/svm.html">SVM</a></li>
+                </ul>
+              </li>
+              <li><a href="definitions.html">Definitions</a></li>
+              <li><a href="data.html">Data</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!-- End of navbar -->
+
+    <!-- Start of container -->
+  <div class="container">
+      <article class="description-content row">
+        <div class="col-xs-12">
+          <h1 class="description-header">A change of direction</h1>
+          <hr class="description-hr"/>
+          <p class="description-text">After attempting to use regression modelling to predict the popularity of a song using multiple attributes, it became clear that this was not going to happen. Perhaps the diversity of different song compisitions and the subjective nature of people's taste in music means that their are just too many independent variables to model.</p>
+          <p class="description-text">At this point my thought is to change to some classification machine learning models. After doing a bit more analysis of the data in Tableau it seems that binning the popularity scores is probabaly the best way to go. Roughly 30% of the songs I have data on have a popularity rating of 0.</p>
+			<p> Using Pandas I quickly added a new column to my database to group songs into having a popularity score of 0, or above 0. </p>
+			<ul>
+			  <li>Songs with popualarity >0: 44,846</li>
+			  <li>Songs with popularity = 0: 29,232</li>
+
+		  </ul>
+			I will use these to see if I can build a model which predicts whether a song will have 'some popularity' or 'no popularity'.
+			</p>
+        </div>
+</article>
+      <article class="description-content row">
+        <div class="col-xs-12">
+		  <h2>Random Forests</h2>
+		  <p><a href='https://github.com/chrisp26/Final-project-song-analysis/blob/main/Code/Models/6_random_forests.ipynb' target="_blank">Github Python Notebook: random forests model</a></p>
+			<br>
+	      <p> After running a few tests these are the final features for my model: </p>
+		    <ul>
+		      <li>Full data set: n = 74,078</li>
+		      <li>X =[['danceability','energy', 'key', 'loudness', 'mode',
+       'speechiness', 'acousticness', 'instrumentalness', 'liveness',
+       'valence', 'tempo', 'time_signature']]</li>
+		      <li>y ='popularity' (as a binary measure)</li>
+		      <li>30% test size</li>
+          </ul>
+<img src="assets/images/random-forests-code.PNG" width="876" alt="random forests code" />
+		<br>
+		  <br>
+		  <p>
+			This model gives a much better score of .69. </p>
+		  <p> When looking at the importance of features, there are 9 attributes which seem to have all fairly equaly weighting.&nbsp; &nbsp;</p>
+		  <p>&nbsp;</p>
+		  <img src="assets/images/random-forests-importance.jpg" width="792" height="474" alt=""/> <br>
+		  <br>
+			          <br>
+          <p class="text-center">
+            <button type="button" class="btn btn-lg btn-default">
+            <a href="/Final-project-song-analysis/multiple-linear-regression.html">Regression 2</a>
+            </button>
+            <button type="button" class="btn btn-lg btn-default">
+            <a href="/Final-project-song-analysis/SVM.html">SVM Model</a>
+            </button>
+          </p>
+		  </div>
+</article>
+    </div>
+
+    <!-- End of container  -->
+
+    <!-- Start of footer -->    <!-- End of footer -->
+
+    <!-- jQuery CDN -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- Bootstrap CDN -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+  <script src="js/bootstrap-3.4.1.js"></script>
+</body>
+
+</html>
